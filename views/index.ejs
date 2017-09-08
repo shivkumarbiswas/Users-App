@@ -1,0 +1,18 @@
+<% include partials/header %>
+        <h1><%= title %></h1>
+
+        <form method="POST" action="/users/add">
+            First Name<br/><input type="text" name="firstName"/><br/>
+            Last Name<br/><input type="text" name="lastName"/><br/><br/>
+            Submit<br/><input type="submit" name="Submit"/>
+        </form>
+
+        <ul>
+            <% users.forEach(function(user){ %>
+                <li>
+                    <%= user.firstname %> <%= user.lastName %> - <a href="#" class ="deleteUser" data-id="<%= user._id %>">Delete</a>
+                </li>
+            <% }); %>
+        </ul>
+<% include partials/footer %>
+    
